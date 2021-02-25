@@ -2,21 +2,21 @@
 <?php include "head.php" ?>
 
 <article>
-    <h1>Registrering</h1>
-    <?php include "email.php" ?>
-</article>
 
-<article>
     <h1>Logga in</h1>
-    <form action="login.php" method="get">
-        Användarnamn: <input type="text" name="user"><br>
-        Lösenord: <input type="text" name="pass"><br>
-        <input type="submit">
-    </form>
-    
-</article>
+    <p>Logga in eller registrera dig</p>
+    <a href="index.php?stage=signin"><input type="button" value="Logga in"></a>
+    <a href="index.php?stage=signup"><input type="button" value="Registrera profil"></a>
 
-<article>
-    <h1>Mata in data</h1>
-    <?php include "insert.php" ?>
+    <?php
+        if(isset($_REQUEST["stage"]) && ($_REQUEST["stage"] == "signup"))
+        {
+            include "register.php";
+        }
+        else if(isset($_REQUEST["stage"]) && ($_REQUEST["stage"] == "signin" || $_REQUEST["stage"] == "login"))
+        {
+            include "login.php";
+        }
+    ?>
+
 </article>
