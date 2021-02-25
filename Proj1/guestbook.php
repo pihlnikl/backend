@@ -39,7 +39,7 @@
                     }
                     fclose($read);
                 }
-                else
+/*                else
                 {
                     if(file_exists("usercomments.txt"))
                     {
@@ -57,7 +57,7 @@
                     {
                         print("No comments");
                     }
-                }
+                } */
                 print("<a href='../BackEnd/usercomments.txt'>Kommentarerna (hemlisar)</a>");
             ?>
         </article>
